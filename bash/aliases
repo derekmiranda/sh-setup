@@ -83,6 +83,12 @@ function copypath() {
   printf "%s" "$path" | pbcopy
 }
 
+# 1-indexed
+function get_nth_word() {
+  n=$1
+  cut -d ' ' -f $n
+}
+
 alias edit_alias='edit ~/bin/bash/aliases'
 alias edit_local_alias='edit ~/bin/bash/local_aliases'
 alias edit_env='edit ~/bin/bash/env'
