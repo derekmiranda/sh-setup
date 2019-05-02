@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function make_gitignore() {
+  if [[ $1 == "--ad" ]]
+  then
+    local ad=true
+  fi
+
+  # ignore generated files in FAT builds
+  echo '*node_modules*' > "$PWD"/.gitignore
+  [[ $ad ]] && echo '*2-debug*' >> "$PWD"/.gitignore
+  [[ $ad ]] && echo '*3-traffic*' >> "$PWD"/.gitignore
+  [[ $ad ]] && echo '*4-vendor*' >> "$PWD"/.gitignore
+  [[ $ad ]] && echo '_buildpoints' >> "$PWD"/.gitignore
+  [[ $ad ]] && echo 'creative_iteration.json' >> "$PWD"/.gitignore
+  echo '.DS_Store' >> "$PWD"/.gitignore
+}

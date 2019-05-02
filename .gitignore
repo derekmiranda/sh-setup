@@ -1,0 +1,4 @@
+.DS_Store
+scripts/_*
+bash/*_alias*
+bash/env
