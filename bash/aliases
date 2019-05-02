@@ -17,12 +17,6 @@ done
 alias go_bash='cd ~/bin/bash/'
 alias go_scripts='cd ~/bin/scripts/'
 
-# Local Aliases
-source $DIR/local_aliases
-
-# Ad App Aliases
-source $DIR/ad_app_aliases
-
 # Folder shortcuts
 alias elecApp='cd $ELECTRON_APP && npm run dev'
 alias notes='cd $NOTES'
@@ -91,7 +85,6 @@ function copypath() {
 
 alias edit_alias='edit ~/bin/bash/aliases'
 alias edit_local_alias='edit ~/bin/bash/local_aliases'
-alias edit_ad_app_alias='edit ~/bin/bash/ad_app_aliases'
 alias edit_env='edit ~/bin/bash/env'
 alias restart='exec bash'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
