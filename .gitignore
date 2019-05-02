@@ -2,3 +2,5 @@
 scripts/_*
 bash/*_alias*
 bash/env
+# Vim save files
+index.sw?
