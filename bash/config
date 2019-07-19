@@ -38,6 +38,9 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
+# Load Git branch completion script
+source ~/bin/bash/git-completion.bash
+
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

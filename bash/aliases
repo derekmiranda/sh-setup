@@ -1,5 +1,8 @@
 # Command Enhancements
 
+# Display
+alias display_sleep="pmset displaysleepnow"
+
 # Override default vim w/ MacVim
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
@@ -32,7 +35,7 @@ alias static_no_cache="static -H '{\"Cache-Control\": \"no-cache, must-revalidat
 alias ngrok_wds="ngrok http 8080 -host-header=\"localhost:8080\""
 
 # Text Editors
-alias edit="vim"
+alias edit="nvim"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 # Python
@@ -48,10 +51,20 @@ function backup_screenshot_to_jpg() {
     then
       quality=85
   fi
-  convert $1 -trim -quality $quality $output
+  convert $1 -trim -quality $quality -resize 50% $output
 }
 
 # Utility
+function top_git_dir() {
+  # prevent cd'ing forever
+  if [[ $PWD == '/' || -e .git ]]; then
+    return
+  fi
+
+  cd ..
+  top_git_dir
+}
+
 function stream_size() {
   wc -c | awk '{print $1/1000"K"}'
 }
@@ -92,7 +105,7 @@ function get_nth_word() {
 alias edit_alias='edit ~/bin/bash/aliases'
 alias edit_local_alias='edit ~/bin/bash/local_aliases'
 alias edit_env='edit ~/bin/bash/env'
-alias restart='exec bash'
+alias restart='exec bash -l'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # Common -- Some are from Damian Conway
@@ -223,6 +236,17 @@ function new-git() {
   git config branch.master.remote origin
   git config branch.master.merge refs/heads/master
   git config push.default current
+}
+# Other Git utils
+function gss() {
+  git fetch
+  git status
+}
+function gpl() {
+  git pull
+}
+function gbr() {
+  git branch
 }
 
 # Text editing
