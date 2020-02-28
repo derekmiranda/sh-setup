@@ -1,0 +1,9 @@
+# zsh settings
+setopt +o nomatch
+
+export HOME=~
+
+for f in "$HOME/bin/sh-setup/sh"/*
+do
+	source $f
+done
