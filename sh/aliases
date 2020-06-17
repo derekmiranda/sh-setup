@@ -3,14 +3,11 @@
 # Display
 alias display_sleep="pmset displaysleepnow"
 
-# Override default vim w/ MacVim
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-
 # Gets current direcory of this script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load scripts
-for file in $DIR/../scripts/*
+for file in $HOME/sh-setup/scripts/*
 do
   chmod u+x $file
   source $file
@@ -35,8 +32,7 @@ alias static_no_cache="static -H '{\"Cache-Control\": \"no-cache, must-revalidat
 alias ngrok_wds="ngrok http 8080 -host-header=\"localhost:8080\""
 
 # Text Editors
-alias edit="nvim"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+alias edit="vim"
 
 # Python
 alias pyman="python manage.py"
@@ -105,7 +101,7 @@ function get_nth_word() {
 alias edit_alias='edit ~/bin/bash/aliases'
 alias edit_local_alias='edit ~/bin/bash/local_aliases'
 alias edit_env='edit ~/bin/bash/env'
-alias restart='exec bash -l'
+alias restart='source ~/.zshrc'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # Common -- Some are from Damian Conway

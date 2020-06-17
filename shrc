@@ -1,9 +1,6 @@
-# zsh settings
-setopt +o nomatch
-
 export HOME=~
 
-for f in "$HOME/bin/sh-setup/sh"/*
+for f in "$HOME/sh-setup/sh"/*
 do
-	source $f
+	source "$f"
 done

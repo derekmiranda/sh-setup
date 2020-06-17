@@ -39,19 +39,6 @@ BCYAN='\e[46m'
 BWHITE='\e[47m'
 
 # Load Git branch completion script
-source ~/bin/bash/git-completion.bash
-
-# Update the command prompt to be <user>:<current_directory>(git_branch) >
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Update the command prompt to be <user>:<current_directory>(git_branch) >
-curr_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
-
-# Note that the git branch is given a special color
-export PS1="\n\u\[\033[32m\]:\w\033[33m\]\$(parse_git_branch)\[\033[00m\] \n→ "
-
-
+AUTOCOMPLETE_SCRIPT=~/sh-setup/sh/git-completion.zsh
+chmod u+x "$AUTOCOMPLETE_SCRIPT"
+source "$AUTOCOMPLETE_SCRIPT"
