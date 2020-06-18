@@ -7,10 +7,7 @@ alias display_sleep="pmset displaysleepnow"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Folder shortcuts
-alias elecApp='cd $ELECTRON_APP && npm run dev'
-alias notes='cd $NOTES'
 alias proj='cd ~/Projects'
-alias current='cd ~/AD_APP/Current'
 
 # Node
 alias node="node --harmony"
@@ -22,6 +19,7 @@ alias ngrok_wds="ngrok http 8080 -host-header=\"localhost:8080\""
 
 # Text Editors
 alias edit="vim"
+alias code="~/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 # Python
 alias pyman="python manage.py"
