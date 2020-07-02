@@ -82,9 +82,9 @@ function get_nth_word() {
   cut -d ' ' -f $n
 }
 
-alias edit_alias='edit ~/.zsh/aliases'
-# alias edit_local_alias='edit ~/.zsh/local_aliases'
-alias edit_env='edit ~/.zsh/config'
+alias edit_alias='edit ~/sh-setup/zsh/aliases'
+# alias edit_local_alias='edit ~/sh-setup/zsh/local_aliases'
+alias edit_env='edit ~/sh-setup/zsh/config'
 alias restart='exec zsh -l'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 
@@ -358,5 +358,14 @@ function __rm_single_file(){
     else
         echo "No such file or directory: $file"
     fi
+}
+
+# Misc CLI shortcuts
+alias pqo="pngquant -f --ext .png"
+alias imgoptim="/Users/derek.miranda/Applications/ImageOptim.app/Contents/MacOS/ImageOptim "
+
+function pqio() {
+	pqo $*
+	imgoptim "${@:2}"
 }
 
