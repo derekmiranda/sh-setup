@@ -7,7 +7,7 @@ export GIT_EDITOR=vim
 
 # run zsh setup
 source ~/sh-setup/zsh/aliases
-# source /sh-setup/zsh/local_aliases
+source ~/sh-setup/zsh/local_aliases
 source ~/sh-setup/zsh/config
 source ~/sh-setup/zsh/show_git
 
