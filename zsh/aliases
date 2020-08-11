@@ -84,9 +84,9 @@ function get_nth_word() {
   cut -d ' ' -f $n
 }
 
-alias edit_alias='edit ~/.zsh/aliases'
-# alias edit_local_alias='edit ~/.zsh/local_aliases'
-alias edit_env='edit ~/.zsh/config'
+alias edit_alias='edit ~/sh-setup/zsh/aliases'
+# alias edit_local_alias='edit ~/sh-setup/zsh/local_aliases'
+alias edit_env='edit ~/sh-setup/zsh/config'
 alias restart='exec zsh -l'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 
@@ -181,18 +181,10 @@ function gg() {
 function gag() {
   gaa && gg "$*"
 }
-# Get current git branch
-function curr_git_branch() {
-    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-    if [[ $branch == "" ]]; then
-        :
-    else
-        echo "$branch"
-    fi
-}
 # Create new branch on remote Git server
 function gpup() {
-  local branch=$(curr_git_branch)
+  # uses oh-my-zsh Git util
+  local branch=$(current_git_branch)
   git push --set-upstream origin "$branch"
 }
 alias gco='git checkout'

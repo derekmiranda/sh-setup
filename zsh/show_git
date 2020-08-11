@@ -71,7 +71,7 @@ functions[VCS_INFO_nvcsformats]=${functions[VCS_INFO_nvcsformats]/local -a msgs/
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%{%F{green}%B%}●%{%b%f%}'
 zstyle ':vcs_info:*' unstagedstr '%{%F{red}%B%}●%{%b%f%}'
-zstyle ':vcs_info:*' formats '%{%F{cyan}%}%45<…<%R%<</%{%f%}%{%F{green}%}(%25>…>%b%<<)%{%f%}%{%F{cyan}%}%S%{%f%}%c%u'
+zstyle ':vcs_info:*' formats '%{%F{cyan}%}%45<…<%R%<</%{%f%}%{%F{	210}%}(%25>…>%b%<<)%{%f%}%{%F{cyan}%}%S%{%f%}%c%u'
 zstyle ':vcs_info:*' actionformats '%{%F{cyan}%}%45<…<%R%<</%{%f%}%{%F{red}%}(%a|%m)%{%f%}%{%F{cyan}%}%S%{%f%}%c%u'
 zstyle ':vcs_info:*' nvcsformats '%{%F{cyan}%}%~%{%f%}'
 zstyle ':vcs_info:git:*' patch-format '%10>…>%p%<< (%n applied)'
@@ -107,12 +107,6 @@ function +vi-git-remote-staged() {
   hook_com[staged]=$gitstaged
   hook_com[unstaged]=$gitunstaged
 }
-autoload -Uz vcs_info
-function precmd() { vcs_info }
-setopt prompt_subst
-PROMPT='%(?..%{%F{red}%}%?%{%f%} )%{%F{green}%}%n%{%f%}@%{%F{red}%}%m%{%f%}:${vcs_info_msg_0_}%{%B%}%(!.#.>)%{%b%E%} '
-# End of lines for vcs_info prompt configuration
-
 
 # Support keyboard navigation in the command prompt
 bindkey "^[[1;3H" backward-word # Fn-Option-Left, Option-Home
