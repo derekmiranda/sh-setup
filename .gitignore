@@ -1,6 +1,7 @@
 .DS_Store
 scripts/_*
 bash/*_alias*
+local_aliases
 bash/env
 # Vim save files
 index.sw?

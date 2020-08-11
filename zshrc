@@ -1,9 +1,13 @@
 # /sh-setup/zsh settings
 setopt +o nomatch
+setopt extended_glob
+
+# Set Git editor to Vim
+export GIT_EDITOR=vim
 
 # run zsh setup
 source ~/sh-setup/zsh/aliases
-# source /sh-setup/zsh/local_aliases
+source ~/sh-setup/zsh/local_aliases
 source ~/sh-setup/zsh/config
 source ~/sh-setup/zsh/show_git
 
