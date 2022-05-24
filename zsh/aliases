@@ -230,6 +230,8 @@ function gpl() {
 function gbr() {
   git branch
 }
+alias empty_commit="git commit --allow-empty -m"
+alias latest_branches="git branch --sort=committerdate"
 
 # Text editing
 # Emacs

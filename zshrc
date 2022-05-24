@@ -22,10 +22,10 @@ PROMPT='${NEWLINE}%(?.%F{green}√.%F{red}?%?)%f %B%2~%f%b ${vcs_info_msg_0_} ${
 
 zstyle ':vcs_info:git:*' formats '(%b)%f'
 zstyle ':vcs_info:*' enable git
-zstyle ':completion:*:*:git:*' script /sh-setup/zsh/git-completion.bash
+zstyle ':completion:*:*:git:*' script /sh-setup/zsh/git-completion.zsh
 fpath=(~/sh-setup/zsh $fpath)
 
-# autoload -Uz compinit
+autoload -Uz compinit
 autoload -Uz vcs_info
 
 fpath=(/sh-setup/zsh $fpath)
