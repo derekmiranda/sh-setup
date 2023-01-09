@@ -88,6 +88,7 @@ alias edit_env='edit ~/sh-setup/zsh/config'
 alias restart='exec zsh -l'
 alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias open_ssh_agent='eval "$(ssh-agent -s)"'
+alias ssh_add_passphrase='ssh-add --apple-use-keychain ~/.ssh/id_ed25519'
 
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
