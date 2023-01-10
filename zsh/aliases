@@ -90,6 +90,10 @@ alias ssh_pub='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias open_ssh_agent='eval "$(ssh-agent -s)"'
 alias ssh_add_passphrase='ssh-add --apple-use-keychain ~/.ssh/id_ed25519'
 
+function md5_string() {
+  echo "$1" | md5
+}
+
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
