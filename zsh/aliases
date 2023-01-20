@@ -178,6 +178,16 @@ alias gba='git branch -a'
 alias gc='git commit'
 alias gca='git commit --amend --no-edit'
 alias gaca='gaa && gca'
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo $branch  
+  fi
+}
 # Commit pending changes and quote all args as message
 function gg() { 
     git commit -m "$*"
@@ -188,7 +198,7 @@ function gag() {
 # Create new branch on remote Git server
 function gpup() {
   # uses oh-my-zsh Git util
-  local branch=$(current_git_branch)
+  local branch=$(git_branch_name)
   git push --set-upstream origin "$branch"
 }
 alias gco='git checkout'
